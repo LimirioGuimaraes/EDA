@@ -12,7 +12,7 @@
 
 
 void MENU();
-void arqD(FILE *arq, char nome_d[], int *tam);
+void arqD(FILE *arq_d, char nome_d[], int *tam);
 
 
 //Função principal.
@@ -33,7 +33,7 @@ int main(){
 
         switch (menu){
             case '1':
-                arqD(arq, nome_d, &tam);
+                arqD(arq_d, nome_d, &tam);
                 break;
             case '2':
 
@@ -104,6 +104,7 @@ void arqD(FILE *arq_d, char nome_d[20], int *tam){
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 void arqTRA(FILE *arq_tra, char nome_tra[20], int *ContA){
     char palavra[100];
