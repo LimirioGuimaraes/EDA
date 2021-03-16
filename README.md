@@ -9,11 +9,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <locale.h>
 
 void MENU();
 void arqDIC(FILE *arq, char nome_d[], int *tam);
 //Função principal.
 int main(){
+    setlocale(LC_ALL,"Portuguese");
     FILE *arq;
     char menu, nome_d[20], nome_tra[20], nome_trb[20];
     int tam, *ContA, *ContB;
