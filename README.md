@@ -16,7 +16,7 @@ void arqDIC(FILE *arq, char nome_d[], int *tam);
 int main(){
     FILE *arq;
     char menu, nome_d[20], nome_tra[20], nome_trb[20];
-    int tam, *ContA[], *ContB[];
+    int tam, *ContA, *ContB;
 
 
     do{
