@@ -53,7 +53,7 @@ int main(){
             default:
                 break;
         }
-    }while(menu != 6);
+    }while(menu != '6');
 
     return 0;
 }
