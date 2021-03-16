@@ -17,7 +17,7 @@ void arqD(FILE *arq, char nome_d[], int *tam);
 
 //Função principal.
 int main(){
-    FILE *arq;
+    FILE *arq_d, *arq_tra, *arq_trb;
     char menu, nome_d[20], nome_tra[20], nome_trb[20];
     int tam, *ContA, *ContB;
 
@@ -105,26 +105,28 @@ void arqD(FILE *arq, char nome_d[20], int *tam){
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-void arqTRA(){
+void arqTRA(FILE *arq_tra, char nome_tra[20], int *ContA){
     char palavra[100];
 
     printf("\n Insira o nome do arquivo de dicionario: ");
-    scanf("%s", nome_d);
+    scanf("%s", nome_tra);
     setbuf(stdin, NULL);
 
-    arq= fopen(nome_tra, "r");
+    arq_tra= fopen(nome_tra, "r");
 
     printf("\n\n");
 
-    if(arq != NULL){
-        while(fgets(palavra, 100, arq) != NULL){
+    if(arq_tra != NULL){
+        while(fgets(palavra, 100, arq_tra) != NULL){
             printf("%s", palavra);
         }
         printf("\n\n");
     }
 
-    if(arq == NULL)
+    if(arq_tra == NULL)
         printf("\nArquivo nao encontrado.\n\n");
+
+    fgets(palavra, 100, arq_d)
 
     system("pause");
 
