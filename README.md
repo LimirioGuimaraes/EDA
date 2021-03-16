@@ -75,26 +75,26 @@ void MENU(){
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-void arqD(FILE *arq, char nome_d[20], int *tam){
+void arqD(FILE *arq_d, char nome_d[20], int *tam){
     char palavra[100];
 
     printf("\n Insira o nome do arquivo de dicionario: ");
     scanf("%s", nome_d);
     setbuf(stdin, NULL);
 
-    arq= fopen(nome_d, "r");
+    arq_d= fopen(nome_d, "r");
 
     printf("\n\n");
 
-    if(arq != NULL){
-        while(fgets(palavra, 100, arq) != NULL){
+    if(arq_d != NULL){
+        while(fgets(palavra, 100, arq_d) != NULL){
             printf("%s", palavra);
             (*tam)++;
         }
         printf("\n\n");
     }
 
-    if(arq == NULL)
+    if(arq_d == NULL)
         printf("\nArquivo nao encontrado.\n\n");
 
     system("pause");
