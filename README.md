@@ -10,11 +10,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-
 void MENU();
-void arqD(FILE *arq, char nome_d[], int *tam);
-
-
+void arqDIC(FILE *arq, char nome_d[], int *tam);
 //Função principal.
 int main(){
     FILE *arq;
@@ -33,7 +30,7 @@ int main(){
 
         switch (menu){
             case '1':
-                arqD(arq, nome_d, &tam);
+                arqDIC(arq, nome_d, &tam);
                 break;
             case '2':
 
@@ -53,7 +50,7 @@ int main(){
             default:
                 break;
         }
-    }while(menu != 6);
+    }while(menu != '6');
 
     return 0;
 }
@@ -75,14 +72,14 @@ void MENU(){
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-void arqD(FILE *arq, char nome_d[20], int *tam){
+void arqDIC(FILE *arq, char nome_d[20], int *tam){
     char palavra[100];
 
     printf("\n Insira o nome do arquivo de dicionario: ");
     scanf("%s", nome_d);
     setbuf(stdin, NULL);
 
-    arq= fopen(nome_d, "r");
+    arq = fopen(nome_d, "r");
 
     printf("\n\n");
 
@@ -106,28 +103,5 @@ void arqD(FILE *arq, char nome_d[20], int *tam){
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 void arqTRA(){
-    char palavra[100];
-
-    printf("\n Insira o nome do arquivo de dicionario: ");
-    scanf("%s", nome_d);
-    setbuf(stdin, NULL);
-
-    arq= fopen(nome_tra, "r");
-
-    printf("\n\n");
-
-    if(arq != NULL){
-        while(fgets(palavra, 100, arq) != NULL){
-            printf("%s", palavra);
-        }
-        printf("\n\n");
-    }
-
-    if(arq == NULL)
-        printf("\nArquivo nao encontrado.\n\n");
-
-    system("pause");
-
-    system("cls || clear");
 
 }
