@@ -17,7 +17,7 @@ void arqD(FILE *arq_d, char nome_d[], int *tam);
 
 //Função principal.
 int main(){
-    FILE *arq_d, *arq_tra, *arq_trb;
+    FILE *arq_d, *arq_tra, *arq_trb, *bowA, *bowB;
     char menu, nome_d[20], nome_tra[20], nome_trb[20];
     int tam, *ContA, *ContB;
 
@@ -108,7 +108,7 @@ void arqD(FILE *arq_d, char nome_d[20], int *tam){
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-void arqTRA(FILE *arq_tra, char nome_tra[20], int *ContA){
+void arqTRA(FILE *arq_tra, FILE *bowA, char nome_tra[20], int *ContA){
     char palavra[100], palavra2[100];
     int comp;
 
@@ -134,7 +134,8 @@ void arqTRA(FILE *arq_tra, char nome_tra[20], int *ContA){
         while(fgets(palavra, 100, arq_tra) != NULL){
             comp= strcmp(palavra2,palavra);
             if(comp == 0)
-                
+                bowA= fopen(bowA, "w");
+                fputs(texto, bowA);
         }
     }
 
