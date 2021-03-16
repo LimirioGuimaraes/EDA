@@ -10,14 +10,11 @@
 #include <stdlib.h>
 #include <string.h>
 
+
 void MENU();
-<<<<<<< HEAD
-void arqDIC(FILE *arq, char nome_d[], int *tam);
-=======
 void arqD(FILE *arq_d, char nome_d[], int *tam);
 
 
->>>>>>> 1d3e94442cb9a7e6534787d76ac8a9eac43d0c9b
 //Função principal.
 int main(){
     FILE *arq_d, *arq_tra, *arq_trb;
@@ -36,11 +33,7 @@ int main(){
 
         switch (menu){
             case '1':
-<<<<<<< HEAD
-                arqDIC(arq, nome_d, &tam);
-=======
                 arqD(arq_d, nome_d, &tam);
->>>>>>> 1d3e94442cb9a7e6534787d76ac8a9eac43d0c9b
                 break;
             case '2':
 
@@ -55,7 +48,9 @@ int main(){
 
                 break;
             case '6':
-
+                    fclose(arq_d);
+                    fclose(arq_tra);
+                    fclose(arq_trb);
                 break;
             default:
                 break;
@@ -82,22 +77,14 @@ void MENU(){
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-<<<<<<< HEAD
-void arqDIC(FILE *arq, char nome_d[20], int *tam){
-=======
 void arqD(FILE *arq_d, char nome_d[20], int *tam){
->>>>>>> 1d3e94442cb9a7e6534787d76ac8a9eac43d0c9b
     char palavra[100];
 
     printf("\n Insira o nome do arquivo de dicionario: ");
     scanf("%s", nome_d);
     setbuf(stdin, NULL);
 
-<<<<<<< HEAD
-    arq = fopen(nome_d, "r");
-=======
     arq_d= fopen(nome_d, "r");
->>>>>>> 1d3e94442cb9a7e6534787d76ac8a9eac43d0c9b
 
     printf("\n\n");
 
@@ -120,14 +107,12 @@ void arqD(FILE *arq_d, char nome_d[20], int *tam){
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-<<<<<<< HEAD
-void arqTRA(){
-=======
 
 void arqTRA(FILE *arq_tra, char nome_tra[20], int *ContA){
-    char palavra[100];
+    char palavra[100], palavra2[100];
+    int comp;
 
-    printf("\n Insira o nome do arquivo de dicionario: ");
+    printf("\n Insira o nome do arquivo de texto de referência A: ");
     scanf("%s", nome_tra);
     setbuf(stdin, NULL);
 
@@ -145,11 +130,16 @@ void arqTRA(FILE *arq_tra, char nome_tra[20], int *ContA){
     if(arq_tra == NULL)
         printf("\nArquivo nao encontrado.\n\n");
 
-    fgets(palavra, 100, arq_d)
+    while(fgets(palavra2, 100, arq_d) != NULL){
+        while(fgets(palavra, 100, arq_tra) != NULL){
+            comp= strcmp(palavra2,palavra);
+            if(comp == 0)
+                
+        }
+    }
 
     system("pause");
 
     system("cls || clear");
->>>>>>> 1d3e94442cb9a7e6534787d76ac8a9eac43d0c9b
 
 }
