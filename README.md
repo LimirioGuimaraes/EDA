@@ -31,24 +31,24 @@ int main(){
         switch (menu){
             case '1':
                 arqDIC(arq, nome_d, &tam);
-            break;
+                break;
             case '2':
 
-            break;
+                break;
             case '3':
 
-            break;
+                break;
             case '4':
 
-            break;
+                break;
             case '5':
 
-            break;
+                break;
             case '6':
 
-            break;
+                break;
             default:
-            break;
+                break;
         }
     }while(menu != 6);
 
