@@ -137,14 +137,12 @@ void arqTRA(FILE *arq_tra, FILE *Dicionario, FILE *arqBOWA, int *ContA){
     }else{
         printf("\nArquivo nao encontrado.\n\n");
     }
-
     while(fgets(palavra1, 200, Dicionario) != NULL){
         do{
-            if (fgets(palavra2, 200, arq_tra) != NULL){
-                if(strcmp(palavra1,palavra2) == 0)
-                    freq++;
-            }
-        }while(palavra2 != NULL);
+            if(strcmp(palavra1,palavra2) == 0)
+                freq++;
+        }while(fgets(palavra2, 200, arq_tra) != NULL);
+
         texto=freq+'0';
         fprintf(arqBOWA, "%c", texto);
         ContA[tamanho]=freq;
