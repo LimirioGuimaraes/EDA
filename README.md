@@ -12,7 +12,7 @@
 
 
 void MENU();
-void LeituraDicionario(FILE *Dicionario, int *ContA, int *ContB);
+FILE* LeituraDicionario(FILE *Dicionario, int *ContA, int *ContB);
 void arqTRA(FILE *arq_tra, FILE *Dicionario, FILE *arqBOWA, int *ContA);
 
 
@@ -49,7 +49,6 @@ int main(){
 
                 break;
             case '6':
-
                 break;
             default:
                 break;
@@ -76,7 +75,7 @@ void MENU(){
 
 
 //Função responsável por acessar o dicionário informado pelo usuário
-void LeituraDicionario(FILE *Dicionario, int *ContA, int *ContB){
+FILE *LeituraDicionario(FILE *Dicionario, int *ContA, int *ContB){
     char NomeDicionario[20], palavra[100];
     int N_Palavras;
 
@@ -99,7 +98,7 @@ void LeituraDicionario(FILE *Dicionario, int *ContA, int *ContB){
         printf("Erro na abertura do arquivo nomeado!\n\n");
     }
 
-    fclose(Dicionario);
+    //fclose(Dicionario);
 
     ContA = (int *) malloc(N_Palavras * sizeof(int));
     ContB = (int *) malloc(N_Palavras * sizeof(int));
@@ -107,6 +106,8 @@ void LeituraDicionario(FILE *Dicionario, int *ContA, int *ContB){
     system("pause");
 
     system("cls || clear");
+
+    return Dicionario;
 }
 
 
