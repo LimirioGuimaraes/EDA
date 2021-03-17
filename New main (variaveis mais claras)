@@ -12,14 +12,15 @@
 
 
 void MENU();
-void LeituraDicionario(FILE *Dicionario, char NomeDicionario[], int *N_Palavras);
+void LeituraDicionario(FILE *Dicionario, int *ContA, int *ContB);
+void arqTRA(FILE *arq_tra, FILE *Dicionario, FILE *arqBOWA, int *ContA);
 
 
 //Função principal.
 int main(){
-    FILE *Dicionario, *arq_tra, *arq_trb, *bowA, *bowB;
-    char menu, NomeDicionario[20], nome_tra[20], nome_trb[20];
-    int N_Palavras, *ContA, *ContB;
+    FILE *Dicionario, *arq_tra, *arq_trb, *arqBOWA, *arqBOWB;
+    char menu;
+    int *ContA, *ContB;
 
 
     do{
@@ -33,10 +34,10 @@ int main(){
 
         switch (menu){
             case '1':
-                LeituraDicionario(Dicionario, NomeDicionario, &N_Palavras);
+                LeituraDicionario(Dicionario, ContA, ContB);
                 break;
             case '2':
-
+                arqTRA(arq_tra, Dicionario, arqBOWA, ContA);
                 break;
             case '3':
 
@@ -61,8 +62,9 @@ int main(){
 }
 
 
-/*-------------------------------------------------------------------void's e funções--------------------------------------------------*/
-//void para chamar o menu
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 void MENU(){
     printf("\t\tComparacao de textos de arquivo");
     printf("\n\n1 - Ler arquivo de dicionario");
@@ -73,28 +75,35 @@ void MENU(){
     printf("\n6 - Sair");
 }
 
-//Função responsável por acessar o dicionário informado pelo usuário
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-void LeituraDicionario(FILE *Dicionario, char NomeDicionario[20], int *N_Palavras){
 
-    char palavra[100];
+void LeituraDicionario(FILE *Dicionario, int *ContA, int *ContB){
+    char NomeDicionario[20], palavra[100];
+    int N_Palavras;
+
     printf("\n Insira o nome do dicionario: ");
     scanf("%s", NomeDicionario);
     setbuf(stdin, NULL);
 
-    Dicionario = fopen(NomeDicionario, "r");
+    Dicionario= fopen(NomeDicionario, "r");
 
-    printf("\n");
+    printf("\n\n");
 
     if(Dicionario != NULL){
         while(fgets(palavra, 100, Dicionario) != NULL){
             printf("%s", palavra);
-            (*N_Palavras)++;
+            N_Palavras++;
         }
+        printf("\n\n");
         printf("\n\nAgora o arquivo '%s' e um dicionario!\n\n", NomeDicionario);
-    } else {
+    }else{
         printf("Erro na abertura do arquivo nomeado!\n\n");
     }
+
+    ContA = (int *) malloc(N_Palavras * sizeof(int));
+    ContB = (int *) malloc(N_Palavras * sizeof(int));
+
     system("pause");
 
     system("cls || clear");
@@ -104,9 +113,9 @@ void LeituraDicionario(FILE *Dicionario, char NomeDicionario[20], int *N_Palavra
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-/*void arqTRA(FILE *arq_tra, FILE *bowA, char nome_tra[20], int *ContA){
-    char palavra[100], palavra2[100];
-    int comp;
+void arqTRA(FILE *arq_tra, FILE *Dicionario, FILE *arqBOWA, int *ContA){
+    char nome_tra[20], palavra[100], palavra2[100], texto[100];
+    int freq;
 
     printf("\n Insira o nome do arquivo de texto de referência A: ");
     scanf("%s", nome_tra);
@@ -128,17 +137,18 @@ void LeituraDicionario(FILE *Dicionario, char NomeDicionario[20], int *N_Palavra
 
     while(fgets(palavra2, 100, Dicionario) != NULL){
         while(fgets(palavra, 100, arq_tra) != NULL){
-            comp= strcmp(palavra2,palavra);
-            if(comp == 0)
-                bowA= fopen(bowA, "w");
-                fputs(texto, bowA);
+            if(strcmp(palavra2,palavra) == 0)
+                freq++;
         }
+        arqBOWA= fopen("bowA.txt", "w");
+            texto=freq;
+            fputs(texto, arqBOWA);
+            ContA=freq;
+            freq=0;
     }
 
     system("pause");
 
-    system("cls || clear")
+    system("cls || clear");
 
 }
-*/
-
