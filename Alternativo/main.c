@@ -1,16 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "LeituraDicionario.h"
+#include "LeituraArquivo.h"
+#include "ContarPalavras.h"
 
 int sair(){
-    printf("Saindo do programa...\n\n");
+    printf("Saindo do programa...\n");
 }
 
 int main(){
 
-    int seletor = 1;
-    FILE *dicionario;
+    int seletor = 1, *ContA, *ContB, n_palavras = 0;
+    FILE *dicionario, *arquivoA;
 
     dicionario = NULL;
 
@@ -28,11 +29,27 @@ int main(){
 
         switch (seletor){
             case 1:
-                dicionario = LeituraDicionario(dicionario);
-                printf("\n%p\n",dicionario);
+                dicionario = LeituraArquivo(dicionario);
+
+                /*Somente tirar o comentário para conferir a passagem do ponteiro
+                (Vide LeituraDicionario.h)
+                printf("\n%p\n",dicionario);*/
+
+                n_palavras = ContarPalavras(dicionario);
+
+                /* Para vizualização do número de palavras
+                printf("\n%d\n", n_palavras);*/
+
+                ContA = (int*) malloc(n_palavras*sizeof(int));
+                ContB = (int*) malloc(n_palavras*sizeof(int));
+
+                /*Somente tirar o comentário para conferir os endereços de memória utilizados
+                printf("\n%p  |  %p\n", ContA, ContB);*/
                 break;
             case 2:
-                printf("\nVocê selecionou a opção 2\n");
+                arquivoA = LeituraArquivo(arquivoA);
+                /*Somente tirar o comentário para conferir os endereços de memória utilizados
+                printf("\n%p\n", arquivoA);*/
                 break;
             case 3:
                 printf("\nVocê selecionou a opção 3\n");
@@ -43,13 +60,17 @@ int main(){
             case 0:
                 sair();
                 break;
-
             default:
                 printf("digite uma opção válida!\n");
         }
     } while (seletor);
 
+    //Desalocando memória dos vetores ContA e ContB
+    free(ContA);
+    free(ContB);
+    //Fechando os arquivos
     fclose(dicionario);
+    fclose(arquivoA);
 
     return 0;
 }
