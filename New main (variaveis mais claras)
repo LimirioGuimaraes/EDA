@@ -13,7 +13,7 @@
 
 void MENU();
 void LeituraDicionario(FILE *Dicionario, int *ContA, int *ContB);
-void arqTRA(FILE *arq_tra, FILE *Dicionario, FILE *arqBOWA, int *ContA);
+void TextoRefA(FILE *arq_tra, FILE *Dicionario, FILE *arqBOWA, int *ContA);
 
 
 //Função principal.
@@ -37,7 +37,7 @@ int main(){
                 LeituraDicionario(Dicionario, ContA, ContB);
                 break;
             case '2':
-                arqTRA(arq_tra, Dicionario, arqBOWA, ContA);
+                TextoRefA(arq_tra, Dicionario, arqBOWA, ContA);
                 break;
             case '3':
 
@@ -61,9 +61,8 @@ int main(){
     return 0;
 }
 
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+/*-------------------------------------------------------------------void's e funções--------------------------------------------------*/
+//void para chamar o menu
 
 void MENU(){
     printf("\t\tComparacao de textos de arquivo");
@@ -75,8 +74,7 @@ void MENU(){
     printf("\n6 - Sair");
 }
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+//Função responsável por acessar o dicionário informado pelo usuário
 
 void LeituraDicionario(FILE *Dicionario, int *ContA, int *ContB){
     char NomeDicionario[20], palavra[100];
@@ -110,10 +108,9 @@ void LeituraDicionario(FILE *Dicionario, int *ContA, int *ContB){
 }
 
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//função responsável por abrir o TRA e ccomparar com o dicionário
 
-
-void arqTRA(FILE *arq_tra, FILE *Dicionario, FILE *arqBOWA, int *ContA){
+void TextoRefA(FILE *arq_tra, FILE *Dicionario, FILE *arqBOWA, int *ContA){
     char nome_tra[20], palavra[100], palavra2[100], texto[100];
     int freq;
 
