@@ -49,9 +49,7 @@ int main(){
 
                 break;
             case '6':
-                    fclose(Dicionario);
-                    fclose(arq_tra);
-                    fclose(arq_trb);
+
                 break;
             default:
                 break;
@@ -101,6 +99,8 @@ void LeituraDicionario(FILE *Dicionario, int *ContA, int *ContB){
         printf("Erro na abertura do arquivo nomeado!\n\n");
     }
 
+    fclose(Dicionario);
+
     ContA = (int *) malloc(N_Palavras * sizeof(int));
     ContB = (int *) malloc(N_Palavras * sizeof(int));
 
@@ -122,6 +122,7 @@ void arqTRA(FILE *arq_tra, FILE *Dicionario, FILE *arqBOWA, int *ContA){
     setbuf(stdin, NULL);
 
     arq_tra= fopen(nome_tra, "r");
+    Dicionario= fopen("d.txt", "r");
 
     printf("\n\n");
 
@@ -150,6 +151,10 @@ void arqTRA(FILE *arq_tra, FILE *Dicionario, FILE *arqBOWA, int *ContA){
         freq=0;
         tamanho++;
     }
+
+    fclose(arq_tra);
+    fclose(arqBOWA);
+    fclose(Dicionario);
 
     system("pause");
 
