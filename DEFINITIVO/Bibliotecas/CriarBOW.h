@@ -14,9 +14,7 @@
          //Zerar o i em todo inicio de laço
          i = 0;
          while(fscanf(trA, "%s", palavra) != EOF){
-             //Somente para conferir variáveis palavra e ch
-             /*printf("%s\n", palavra);
-             printf("%s\n", ch);*/
+
              if (strcmp(palavra,ch) == 0){
                  i++;
              }
@@ -25,8 +23,7 @@
          fputs(ch,bow);
          fprintf(bow, " %d\n", i);
          cont[j] = i;
-         /*Print para conferir conteúdo do contA ou contB
-         printf("%d ", cont[j]);*/
+
          j++;
      }
 
@@ -36,9 +33,7 @@
      if (bow == NULL){
          printf("\nFalha na criação ou no acesso ao arquivo...\n");
      } else {
-         /*Somente tirar o comentário para conferir a passagem do ponteiro
-         (vide main.c)
-         printf("\n%p\n",bow);*/
+         
          printf("\nO arquivo %s foi criado!\n\n", nomeArquivo);
      }
 

@@ -5,13 +5,12 @@
 int ContarPalavras(FILE *dicionario){
     int N_Palavras = 0;
     char palavra[100];
-
+    //Laço para contagem de palavras dentro do dicionário
     while(fgets(palavra, 100, dicionario) != NULL){
-        /* Para vizualização das palavras
-        printf("%s", palavra);*/
+
         N_Palavras++;
     }
-
+    //Retornando o ponteiro do dicionário à posição inicial no arquivo
     rewind(dicionario);
     return N_Palavras;
 }

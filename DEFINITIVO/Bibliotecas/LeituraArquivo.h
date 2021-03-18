@@ -15,9 +15,7 @@
          printf("\nNome não válido...\n");
      } else {
          printf("\nO arquivo %s foi selecionado!\n\n", nArquivo);
-         /*Somente tirar o comentário para conferir a passagem do ponteiro
-         (vide main.c)
-         printf("\n%p\n",Arquivo);*/
+         
      }
 
      return Arquivo;
