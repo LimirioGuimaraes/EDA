@@ -12,7 +12,8 @@ int sair(){
 int main(){
 
     int seletor = 1, *ContA, *ContB, n_palavras = 0;
-    FILE *dicionario, *arquivoA, *bowA;
+    FILE *dicionario, *arquivoA, *arquivoB, *bowA, *bowB;
+    char *nomeArquivo;
 
     dicionario = NULL;
 
@@ -51,15 +52,25 @@ int main(){
                 arquivoA = LeituraArquivo(arquivoA);
                 /*Somente tirar o comentário para conferir os endereços de memória utilizados
                 printf("\n%p\n", arquivoA);*/
-                
+
                 //Criando o arquivo bowA
-                bowA = CriarBOW(bowA, arquivoA, dicionario);
+                nomeArquivo = "bowA.txt";
+                bowA = CriarBOW(bowA, arquivoA, dicionario, nomeArquivo);
                 /*Somente tirar o comentário para conferir a passagem do ponteiro
                 (Vide CriarArquivo.h)
                 printf("\n%p\n",bowA);*/
                 break;
             case 3:
-                printf("\nVocê selecionou a opção 3\n");
+                arquivoB = LeituraArquivo(arquivoB);
+                /*Somente tirar o comentário para conferir os endereços de memória utilizados
+                printf("\n%p\n", arquivoA);*/
+
+                //Criando o arquivo bowA
+                nomeArquivo = "bowB.txt";
+                bowB = CriarBOW(bowB, arquivoB, dicionario, nomeArquivo);
+                /*Somente tirar o comentário para conferir a passagem do ponteiro
+                (Vide CriarArquivo.h)
+                printf("\n%p\n",bowA);*/
                 break;
             case 4:
                 printf("\nVocê selecionou a opção 4\n");
