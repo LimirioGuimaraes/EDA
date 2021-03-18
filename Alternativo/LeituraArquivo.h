@@ -13,7 +13,6 @@
      //checagem do ponteiro e mensagem de confirmação
      if (Arquivo == NULL){
          printf("\nNome não válido...\n");
-         //LeituraDicionario(dicionario);
      } else {
          printf("\nO arquivo %s foi selecionado!\n\n", nArquivo);
          /*Somente tirar o comentário para conferir a passagem do ponteiro

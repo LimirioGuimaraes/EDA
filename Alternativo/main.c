@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "LeituraArquivo.h"
+#include "CriarBOW.h"
 #include "ContarPalavras.h"
 
 int sair(){
@@ -11,7 +12,8 @@ int sair(){
 int main(){
 
     int seletor = 1, *ContA, *ContB, n_palavras = 0;
-    FILE *dicionario, *arquivoA;
+    FILE *dicionario, *arquivoA, *bowA;
+    char ch;
 
     dicionario = NULL;
 
@@ -50,6 +52,12 @@ int main(){
                 arquivoA = LeituraArquivo(arquivoA);
                 /*Somente tirar o comentário para conferir os endereços de memória utilizados
                 printf("\n%p\n", arquivoA);*/
+
+                bowA = CriarBOW(bowA, dicionario);
+
+                /*Somente tirar o comentário para conferir a passagem do ponteiro
+                (Vide CriarArquivo.h)
+                printf("\n%p\n",bowA);*/
                 break;
             case 3:
                 printf("\nVocê selecionou a opção 3\n");
@@ -71,6 +79,7 @@ int main(){
     //Fechando os arquivos
     fclose(dicionario);
     fclose(arquivoA);
+    fclose(bowA);
 
     return 0;
 }
