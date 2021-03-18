@@ -1,9 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "LeituraArquivo.h"
-#include "CriarBOW.h"
-#include "ContarPalavras.h"
+#include "Bibliotecas/LeituraArquivo.h"
+#include "Bibliotecas/CriarBOW.h"
+#include "Bibliotecas/ContarPalavras.h"
+#include "Bibliotecas/ImprimeBOW.h"
 
 int sair(){
     printf("Saindo do programa...\n");
@@ -11,9 +12,9 @@ int sair(){
 
 int main(){
 
-    int seletor = 1, *ContA, *ContB, n_palavras = 0;
+    int seletor = 1, *ContA, *ContB, n_palavras = 0, i;
     FILE *dicionario, *arquivoA, *arquivoB, *bowA, *bowB;
-    char *nomeArquivo;
+    char *nomeArquivo, palavrasDicionario[50];
 
     dicionario = NULL;
 
@@ -22,7 +23,7 @@ int main(){
         printf("1. Selecionar arquivo dicionário\n");
         printf("2. Selecionar texto de referência A\n");
         printf("3. Selecionar texto de referência B\n");
-        printf("4. Comparar textos de referência e dicionário\n");
+        printf("4. Imprimir BOWs dos textos referência\n");
         printf("0. sair\n\n");
         printf("Digite a opção desejada: ");
 
@@ -55,7 +56,7 @@ int main(){
 
                 //Criando o arquivo bowA
                 nomeArquivo = "bowA.txt";
-                bowA = CriarBOW(bowA, arquivoA, dicionario, nomeArquivo);
+                bowA = CriarBOW(bowA, arquivoA, dicionario, nomeArquivo, ContA);
                 /*Somente tirar o comentário para conferir a passagem do ponteiro
                 (Vide CriarArquivo.h)
                 printf("\n%p\n",bowA);*/
@@ -67,13 +68,14 @@ int main(){
 
                 //Criando o arquivo bowA
                 nomeArquivo = "bowB.txt";
-                bowB = CriarBOW(bowB, arquivoB, dicionario, nomeArquivo);
+                bowB = CriarBOW(bowB, arquivoB, dicionario, nomeArquivo, ContB);
                 /*Somente tirar o comentário para conferir a passagem do ponteiro
                 (Vide CriarArquivo.h)
                 printf("\n%p\n",bowA);*/
                 break;
             case 4:
-                printf("\nVocê selecionou a opção 4\n");
+                printf("\nPalavras      Texto A (#)     Texto B (#)\n");
+                ImprimeBOW(ContA, ContB, dicionario);
                 break;
             case 0:
                 sair();

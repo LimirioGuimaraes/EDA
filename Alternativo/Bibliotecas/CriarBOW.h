@@ -2,9 +2,9 @@
 #include <stdlib.h>
 #include <string.h>
 
- FILE *CriarBOW(FILE *bow, FILE *trA, FILE *dicionario, char nomeArquivo[10]){
+ FILE *CriarBOW(FILE *bow, FILE *trA, FILE *dicionario, char nomeArquivo[10], int *cont){
      char ch[50], palavra[50];
-     int i;
+     int i, j = 0, k;
      //Abertura do arquivo
      bow = fopen(nomeArquivo, "w+");
      //Cópia do arquivo dicionário em BOW
@@ -17,17 +17,19 @@
              //Somente para conferir variáveis palavra e ch
              /*printf("%s\n", palavra);
              printf("%s\n", ch);*/
-             if (strcmp(palavra, ch) == 0){
+             if (strcmp(palavra,ch) == 0){
                  i++;
              }
          }
          //Colocando as palavras contidas em dicionário dentro do BOW
          fputs(ch,bow);
          fprintf(bow, " %d\n", i);
+         cont[j] = i;
+         /*Print para conferir conteúdo do contA ou contB
+         printf("%d ", cont[j]);*/
+         j++;
      }
-     //Voltar os ponteiros para o início dos arquivos
-     rewind(bow);
-     rewind(dicionario);
+
      //Lógica para comparação de dicionário em TRA
 
      //checagem do ponteiro e mensagem de confirmação
@@ -40,5 +42,8 @@
          printf("\nO arquivo %s foi criado!\n\n", nomeArquivo);
      }
 
+     //Voltar os ponteiros para o início dos arquivos
+     rewind(bow);
+     rewind(dicionario);
      return bow;
 }
