@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "PreencherBOW.h"
 
  FILE *CriarBOW(FILE *bow, FILE *dict){
      char ch[50];
@@ -21,5 +20,8 @@
          printf("\n%p\n",bow);*/
          printf("\nO arquivo bowA.txt foi criado!\n\n");
      }
+
+     rewind(bow);
+     rewind(dict);
      return bow;
 }
