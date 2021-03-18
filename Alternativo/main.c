@@ -13,7 +13,6 @@ int main(){
 
     int seletor = 1, *ContA, *ContB, n_palavras = 0;
     FILE *dicionario, *arquivoA, *bowA;
-    char ch;
 
     dicionario = NULL;
 
@@ -52,8 +51,9 @@ int main(){
                 arquivoA = LeituraArquivo(arquivoA);
                 /*Somente tirar o comentário para conferir os endereços de memória utilizados
                 printf("\n%p\n", arquivoA);*/
-
-                bowA = CriarBOW(bowA, dicionario);
+                
+                //Criando o arquivo bowA
+                bowA = CriarBOW(bowA, arquivoA, dicionario);
                 /*Somente tirar o comentário para conferir a passagem do ponteiro
                 (Vide CriarArquivo.h)
                 printf("\n%p\n",bowA);*/

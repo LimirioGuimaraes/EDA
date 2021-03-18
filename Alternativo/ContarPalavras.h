@@ -2,16 +2,16 @@
 #include <stdlib.h>
 #include <string.h>
 
-int ContarPalavras(FILE *dic){
+int ContarPalavras(FILE *dicionario){
     int N_Palavras = 0;
     char palavra[100];
 
-    while(fgets(palavra, 100, dic) != NULL){
+    while(fgets(palavra, 100, dicionario) != NULL){
         /* Para vizualização das palavras
         printf("%s", palavra);*/
         N_Palavras++;
     }
 
-    rewind(dic);
+    rewind(dicionario);
     return N_Palavras;
 }
