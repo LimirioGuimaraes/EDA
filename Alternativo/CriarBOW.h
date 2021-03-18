@@ -1,14 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "PreencherBOW.h"
 
  FILE *CriarBOW(FILE *bow, FILE *dict){
-     char ch[100];
-
+     char ch[50];
+     //Abertura do arquivo
      bow = fopen("bowA.txt", "w+");
-     /*while(( fgets(ch, 100, dict) ) != NULL ){
-         fputs(ch, bow);
-     }*/
+     //Cópia do arquivo dicionário em BOW
+     while(fgets(ch, 50, dict) != NULL){
+         fputs(ch,bow);
+     }
 
      //checagem do ponteiro e mensagem de confirmação
      if (bow == NULL){

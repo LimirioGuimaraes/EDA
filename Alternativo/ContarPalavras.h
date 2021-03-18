@@ -12,5 +12,6 @@ int ContarPalavras(FILE *dic){
         N_Palavras++;
     }
 
+    rewind(dic);
     return N_Palavras;
 }

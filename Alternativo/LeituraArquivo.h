@@ -6,7 +6,7 @@
      char nArquivo[20];
 
      //Função de leitura do dicionário
-     printf("\nDigite o nome do arquivo dicionário (Máximo de 20 caracteres): ");
+     printf("\nDigite o nome do arquivo (Máximo de 20 caracteres): ");
      scanf("%s", nArquivo);
      //Abertura do arquivo dicionário
      Arquivo = fopen(nArquivo, "r");

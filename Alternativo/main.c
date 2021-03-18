@@ -54,7 +54,6 @@ int main(){
                 printf("\n%p\n", arquivoA);*/
 
                 bowA = CriarBOW(bowA, dicionario);
-
                 /*Somente tirar o comentário para conferir a passagem do ponteiro
                 (Vide CriarArquivo.h)
                 printf("\n%p\n",bowA);*/
