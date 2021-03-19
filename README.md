@@ -1,7 +1,7 @@
 # Comparar textos
 
 ## algoritmo
-######Síntese
+###### Síntese
 Objetivo: Comparar textos de arquivo;
 Entrada: Dicionário e 2 textos de referência
 Saída: Similaridade entre os textos
