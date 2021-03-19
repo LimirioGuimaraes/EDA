@@ -1,7 +1,7 @@
 # Comparar textos
 
 ###### algoritmo
-        __ Síntese __
+        **Síntese**
 Objetivo: Comparar textos de arquivo;
 Entrada: Dicionário e 2 textos de referência
 Saída: Similaridade entre os textos
@@ -10,35 +10,35 @@ Saída: Similaridade entre os textos
 
 ###### Função Sair
 
-__ f(n) = O(1) + O(1) __
-__ f(n) = O(1) __
+**f(n) = O(1) + O(1)**
+**f(n) = O(1)**
 
 ###### Função Leitura Arquivo
 
-__ f(n) = 9x(O(1)) __
-__ f(n) = O(1) __
+**f(n) = 9x(O(1))**
+**f(n) = O(1)**
 
 ###### Função Contar Palavras
 
-__ f(n) = 5x(O(1)) + O(N) __
-__ f(n) = O(N) __
+**f(n) = 5x(O(1)) + O(N)**
+**f(n) = O(N)**
 
 ###### Função Criar BOW
 
-__ f(n) = 17x(O(1)) + O(N) + O(N^2) __
-__ f(n) = O(N^2) __
+**f(n) = 17x(O(1)) + O(N) + O(N^2)**
+**f(n) = O(N^2)**
 
 ###### Função Imprime BOW
 
-__ f(n) = 6x(O(1)) + O(N) __
-__ f(n) = O(N) __
+**f(n) = 6x(O(1)) + O(N)**
+**f(n) = O(N)**
 
 
 ###### Função main
 
-__ f(n) = 38x(O(1)) + 4x(O(N)) + 2x(O(N^2)) __
-__ f(n) = O(N^2) __
+**f(n) = 38x(O(1)) + 4x(O(N)) + 2x(O(N^2))**
+**f(n) = O(N^2)**
 
 ## Complexidade geral do código
 
-__ f(n) = O(N^2) __
+**f(n) = O(N^2)**
