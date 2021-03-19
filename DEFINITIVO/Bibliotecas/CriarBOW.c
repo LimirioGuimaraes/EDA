@@ -31,9 +31,9 @@
 
      //checagem do ponteiro e mensagem de confirmação
      if (bow == NULL){
-         printf("\nFalha na criação ou no acesso ao arquivo...\n");
+         printf("\nFalha na criacao ou no acesso ao arquivo...\n");
      } else {
-         
+
          printf("\nO arquivo %s foi criado!\n\n", nomeArquivo);
      }
 

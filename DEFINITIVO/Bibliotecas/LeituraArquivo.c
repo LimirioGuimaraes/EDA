@@ -6,16 +6,16 @@
      char nArquivo[20];
 
      //Função de leitura do dicionário
-     printf("\nDigite o nome do arquivo (Máximo de 20 caracteres): ");
+     printf("\nDigite o nome do arquivo (Maximo de 20 caracteres): ");
      scanf("%s", nArquivo);
      //Abertura do arquivo dicionário
      Arquivo = fopen(nArquivo, "r");
      //checagem do ponteiro e mensagem de confirmação
      if (Arquivo == NULL){
-         printf("\nNome não válido...\n");
+         printf("\nNome nao valido...\n");
      } else {
          printf("\nO arquivo %s foi selecionado!\n\n", nArquivo);
-         
+
      }
 
      return Arquivo;

@@ -9,7 +9,7 @@ Matheus Pimentel Leal - 15/0141629
 
 
               algoritmo
-    Síntese: 
+    Síntese:
     Objetivo: Comparar textos de arquivo;
     Entrada:
     Saída:
@@ -38,14 +38,14 @@ int main(){
     char *nomeArquivo, palavrasDicionario[50];
 
     do {
-        printf("\n\tMenu de opções:\n\n");
-        printf("1. Selecionar arquivo dicionário\n");
-        printf("2. Selecionar texto de referência A\n");
-        printf("3. Selecionar texto de referência B\n");
-        printf("4. Imprimir BOWs dos textos referência\n");
-        printf("5. Similaridade entre os dois rextos de referência (Distância Euclidiana)\n");
-        printf("0. sair\n\n");
-        printf("Digite a opção desejada (SOMENTE NÚMEROS): ");
+        printf("\n\tMenu de opcoes:\n\n");
+        printf("1. Selecionar arquivo dicionario\n");
+        printf("2. Selecionar texto de referencia A\n");
+        printf("3. Selecionar texto de referencia B\n");
+        printf("4. Imprimir BOWs dos textos referencia\n");
+        printf("5. Similaridade entre os dois rextos de referencia (Distancia Euclidiana)\n");
+        printf("0. Sair\n\n");
+        printf("Digite a opcao desejada (SOMENTE NUMEROS): ");
 
         scanf("%d", &seletor);
         system ("cls || clear");
@@ -88,7 +88,7 @@ int main(){
                 }
                 DistEuclid = sqrt(soma);
                 //Impressão do resultado
-                printf("\nDistância Euclidiana (Quanto maior o número, menos similares são os textos):");
+                printf("\nDistancia Euclidiana (Quanto maior o numero, menos similares sao os textos):");
                 printf(" %lf\n", DistEuclid);
                 break;
             case 0:
@@ -97,7 +97,7 @@ int main(){
                 break;
             default:
                 //Caso seja digitado um número não válido
-                printf("digite uma opção válida!\n");
+                printf("Digite uma opcao valida!\n");
         }
     } while (seletor);
 
