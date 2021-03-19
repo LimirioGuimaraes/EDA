@@ -1,5 +1,8 @@
 # Comparar textos
 
+Acompanha arquivos d.txt (Dicionário), tra.txt (texto de referência A) e trb.txt (texto de referência B)
+ dentro da pasta **Codigo_Base**
+
 ## algoritmo
 ###### Síntese
 Objetivo: Comparar textos de arquivo<br/>

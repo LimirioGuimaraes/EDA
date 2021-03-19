@@ -1,0 +1,10 @@
+zangado 0
+mundo 1
+o 1
+chao 0
+olhar 1
+Eles 0
+queixo 1
+Eu 1
+grandao 0
+passarinho 0
