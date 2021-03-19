@@ -2,8 +2,8 @@
 
 ## algoritmo
 ###### Síntese
-Objetivo: Comparar textos de arquivo;
-Entrada: Dicionário e 2 textos de referência
+Objetivo: Comparar textos de arquivo<br/>
+Entrada: Dicionário e 2 textos de referência<br/>
 Saída: Similaridade entre os textos
 
 ## Descrição Assintótica do projeto
