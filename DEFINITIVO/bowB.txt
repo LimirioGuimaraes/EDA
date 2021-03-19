@@ -1,9 +1,9 @@
-cume 11
-tarde 0
-fe 0
+cume 0
+tarde 1
+fe 1
 matar 0
-sol 1
-mulher 0
+sol 0
+mulher 1
 saudade 0
 jarro 0
 tirania 0

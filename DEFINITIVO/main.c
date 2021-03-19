@@ -16,21 +16,21 @@ Matheus Pimentel Leal - 15/0141629
 */
 
 //Inclusão de bibliotecas
-#include <stdio.h> /*O(1)*/
-#include <stdlib.h> /*O(1)*/
-#include <string.h> /*O(1)*/
-#include <math.h> /*O(1)*/
-#include "Bibliotecas/LeituraArquivo.h" /*O(1)*/
-#include "Bibliotecas/CriarBOW.h" /*O(1)*/
-#include "Bibliotecas/ContarPalavras.h" /*O(1)*/
-#include "Bibliotecas/ImprimeBOW.h" /*O(1)*/
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <math.h>
+#include "Bibliotecas/LeituraArquivo.h"
+#include "Bibliotecas/CriarBOW.h"
+#include "Bibliotecas/ContarPalavras.h"
+#include "Bibliotecas/ImprimeBOW.h"
 
 //Função de saída do programa
 int sair() /*O(1)*/ {
     printf("Saindo do programa...\n"); /*O(1)*/
 }
 
-int main() /*O(1)*/ {
+int main() /*O(N^2)*/ {
     //Declaração de variáveis
     int seletor = 1, *ContA, *ContB, n_palavras = 0, i = 0, soma; /*O(1)*/
     double DistEuclid; /*O(1)*/
