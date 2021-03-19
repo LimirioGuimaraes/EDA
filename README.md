@@ -1,1 +1,1 @@
-#Comparar textos H1
+# Comparar textos
