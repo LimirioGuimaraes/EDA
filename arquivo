@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+void imprime_menu ();
+
+int main()
+{
+    int menu;
+
+      do
+           {
+               imprime_menu ();
+               scanf ("%d", &menu);
+               system("cls || clear ");
+               getchar();
+
+               switch (menu)
+                {
+                case 1:
+
+                    break;
+                case 2:
+
+                    break;
+                case 3:
+
+                    break;
+                case 4:
+
+                    break;
+                default:
+                    printf ("Numero incorreto!!\7\n");
+                }
+            }
+        while (menu != 4);
+}
+
+void imprime_menu ()
+{
+        printf("1. Gerar ABP\n");
+        printf ("2. Calcula Fator de Balanceamento\n");
+        printf ("3. Imprime ABP\n");
+        printf("4. Sair\n");
+
+}
+
+
