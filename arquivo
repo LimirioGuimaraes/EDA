@@ -3,10 +3,13 @@ Autores:
 
 Breno Alexandre Soares Garcia - 20/0035703
 Janaína Aparecida Queiroz Rabelo - 20/0038915
-Hoton Geraldo do Carmo Junior - 20/0038389
 Limirio Correia Guimaraes - 20/0040201
 Matheus Pimentel Leal - 15/0141629
 */
+
+
+
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -33,16 +36,17 @@ int main()
                 {
                 case 1:
 
-                    break;
+                break;
                 case 2:
 
-                    break;
+                break;
                 case 3:
 
-                    break;
+                    system("pause");
+                break;
                 case 4:
 
-                    break;
+                break;
                 default:
                     printf ("Opcao invalida!!\7\n");
                 }
@@ -54,8 +58,10 @@ int main()
 void imprime_menu()
 {
         printf("1. Gerar ABP\n");
-        printf ("2. Calcula Fator de Balanceamento\n");
+        printf ("2. Calcular Fator de Balanceamento\n");
         printf ("3. Imprime ABP\n");
         printf("4. Sair\n");
 
 }
+
+
