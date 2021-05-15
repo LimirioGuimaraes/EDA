@@ -1,13 +1,25 @@
+/*
+Autores:
+
+Breno Alexandre Soares Garcia - 20/0035703
+Janaína Aparecida Queiroz Rabelo - 20/0038915
+Hoton Geraldo do Carmo Junior - 20/0038389
+Limirio Correia Guimaraes - 20/0040201
+Matheus Pimentel Leal - 15/0141629
+*/
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
-#include "GeraABP.c"
+
+
+
 
 void imprime_menu ();
 
-int main() {
-    struct No *c = NULL;
-    char nomeArquivo[20];
+
+
+
+int main()
+{
     int menu;
 
       do
@@ -20,39 +32,30 @@ int main() {
                switch (menu)
                 {
                 case 1:
-                    scanf("%s", nomeArquivo);
-                    c = GeraABP(c, nomeArquivo);
-                    // c = GeraABP(c);
+
                     break;
                 case 2:
 
                     break;
                 case 3:
-                    printf("cabeca: %d\n", c -> chave);
-                    if(c -> pDir == NULL){
-                        printf("pDir = NULL\n");
-                    }
-                    if(c -> pEsq == NULL){
-                        printf("pEsq = NULL\n");
-                    }
+
                     break;
                 case 4:
 
                     break;
                 default:
-                    printf ("Numero incorreto!!\7\n");
+                    printf ("Opcao invalida!!\7\n");
                 }
             }
         while (menu != 4);
-        return 0;
 }
 
-void imprime_menu ()
+
+void imprime_menu()
 {
         printf("1. Gerar ABP\n");
-        printf("2. Calcula Fator de Balanceamento\n");
-        printf("3. Imprime ABP\n");
+        printf ("2. Calcula Fator de Balanceamento\n");
+        printf ("3. Imprime ABP\n");
         printf("4. Sair\n");
-        printf("Opção: ");
 
 }
