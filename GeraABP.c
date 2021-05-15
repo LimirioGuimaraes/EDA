@@ -16,33 +16,41 @@ typedef struct No{
 
 No *GeraABP(No *cabeca, char nomeArquivo[20]){
     int valor;
-    // Alocar espaço para no novo nó
-    struct No *NovoNo = malloc(sizeof(No)), *aux;
     // Ponteiro para abertura e leitura do arquivo
     FILE *Csv;
     // Abrir o arquivo em modo de leitura
     Csv = fopen(nomeArquivo, "r");
-    while (Csv != '\0'){
-        fscanf(Csv, "%d", &valor);
+    
+    if(Csv == NULL){
+        return NULL;
     }
-    // Checar se a cabeça é nula (Árvore vazia)
-    if (cabeca ==  NULL){
-        // Atribuir valor ao novo nó e setar ponteiros para NULL
-        NovoNo -> chave = valor;
-        NovoNo -> pEsq = NULL;
-        NovoNo -> pDir = NULL;
-        cabeca = NovoNo;
-    } else {
-        aux = cabeca;
-        NovoNo -> chave = valor;
-        NovoNo -> pEsq = NULL;
-        NovoNo -> pDir = NULL;
-        if(valor <= aux -> chave){
-            aux -> pEsq = NovoNo;
+
+    while(!feof(Csv)){
+        fscanf(Csv, "%d, ", &valor);
+        // Alocar espaço para no novo nó e para o ponteiro auxiliar
+        struct No *NovoNo = malloc(sizeof(No)), *aux;
+        // Checar se a cabeça é nula (Árvore vazia)
+        if (cabeca ==  NULL){
+            // Atribuir valor ao novo nó e setar ponteiros para NULL
+            NovoNo -> chave = valor;
+            NovoNo -> pEsq = NULL;
+            NovoNo -> pDir = NULL;
+            cabeca = NovoNo;
         } else {
-            printf("Deu bosta\n");
+            aux = cabeca;
+            NovoNo -> chave = valor;
+            NovoNo -> pEsq = NULL;
+            NovoNo -> pDir = NULL;
+            if(valor <= aux -> chave){
+                // Elementos menores ou iguais ao nó cabeça
+                aux -> pEsq = NovoNo;
+            } else {
+                // Elementos maiores que o nó cabeça
+                aux -> pDir = NovoNo;
+            }
         }
     }
+
     fclose(Csv);
     return cabeca;
 }
