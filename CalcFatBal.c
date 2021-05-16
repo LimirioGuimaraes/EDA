@@ -13,7 +13,7 @@ int CalcAltura(No *no){
         }
     }
 
-    if (tamEsq <= tamDir){
+    if (tamEsq >= tamDir){
         return tamEsq;
     } else {
         return tamDir;
