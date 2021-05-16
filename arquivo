@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "GeraABP.c"
-// #include "CalcFatBal.c"
+// #include "GeraABP.c"
+#include "CalcFatBal.c"
 
 void imprime_menu ();
 
@@ -26,7 +26,7 @@ int main() {
                     c = GeraABP(c, nomeArquivo);
                     break;
                 case 2:
-                    // c = CalcFatBal(c);
+                    c = CalcFatBal(c);
                     break;
                 case 3:
                     printf("cabeca: %d\n", c -> chave);
@@ -40,6 +40,8 @@ int main() {
                     } else {
                         printf("No da Direita: %d\n", c -> pDir -> chave);
                     }
+
+                    printf("Fator de balanceamento do no cabeca: %d\n", c -> FatBal);
                     break;
                 case 4:
                     free (c);
