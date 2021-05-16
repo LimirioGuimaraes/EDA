@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "GeraABP.c"
+// #include "CalcFatBal.c"
 
 void imprime_menu ();
 
@@ -20,24 +21,28 @@ int main() {
                switch (menu)
                 {
                 case 1:
+                    printf("Digite o nome do arquivo desejado: ");
                     scanf("%s", nomeArquivo);
                     c = GeraABP(c, nomeArquivo);
-                    // c = GeraABP(c);
                     break;
                 case 2:
-
+                    // c = CalcFatBal(c);
                     break;
                 case 3:
                     printf("cabeca: %d\n", c -> chave);
-                    if(c -> pDir == NULL){
-                        printf("pDir = NULL\n");
-                    }
                     if(c -> pEsq == NULL){
-                        printf("pEsq = NULL\n");
+                        printf("No da esquerda da cabeca = NULO!\n");
+                    } else {
+                        printf("No da Esquerda: %d\n", c -> pEsq -> chave);
+                    }
+                    if(c -> pDir == NULL){
+                        printf("No da direita da cabeca = NULO!\n");
+                    } else {
+                        printf("No da Direita: %d\n", c -> pDir -> chave);
                     }
                     break;
                 case 4:
-
+                    free (c);
                     break;
                 default:
                     printf ("Numero incorreto!!\7\n");
