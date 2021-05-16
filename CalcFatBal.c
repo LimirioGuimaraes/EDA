@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 #include "GeraABP.c"
 
 int CalcAltura(No *no){
@@ -12,7 +13,7 @@ int CalcAltura(No *no){
             tamDir = CalcAltura(no -> pDir) + 1;
         }
     }
-
+    no -> FatBal = abs(tamDir - tamEsq);
     if (tamEsq >= tamDir){
         return tamEsq;
     } else {
@@ -30,7 +31,6 @@ int FatBal (No *no){
     if (no -> pEsq != NULL){
         Esq = CalcAltura (no -> pEsq);
     }
-
     return abs(Esq - Dir);
 }
 
@@ -38,8 +38,7 @@ No *CalcFatBal(No *cabeca){
 
     // Se o nó cabeça for nulo, retornar Fator de balanceamento 0
     if(cabeca == NULL){
-        cabeca -> FatBal = 0;
-        return cabeca;
+        return NULL;
     }
     cabeca -> FatBal = FatBal(cabeca);
     return cabeca;
